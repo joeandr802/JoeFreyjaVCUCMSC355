@@ -1,0 +1,4 @@
+com/example/mineweper/BuildConfig.java
+ com.example.mineweper.BuildConfig
+com/example/mineweper/MainActivity.java
+ com.example.mineweper.MainActivity
