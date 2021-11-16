@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_menu0.xml",
+        "source": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\src\\main\\res\\layout\\activity_menu0.xml"
+    },
+    {
+        "merged": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_scores.xml",
+        "source": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\src\\main\\res\\layout\\activity_scores.xml"
+    },
+    {
+        "merged": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_options.xml",
+        "source": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\src\\main\\res\\layout\\activity_options.xml"
+    },
+    {
+        "merged": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_play.xml",
+        "source": "C:\\Users\\joean\\Documents\\JoeFreyjaVCUCMSC355\\Mineweper\\app\\src\\main\\res\\layout\\activity_play.xml"
+    }
+]
