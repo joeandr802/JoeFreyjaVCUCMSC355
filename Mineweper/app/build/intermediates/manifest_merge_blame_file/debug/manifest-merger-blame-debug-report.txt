@@ -6,45 +6,77 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml
+8-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml
+9-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:5:5-21:19
+11-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:5:5-37:19
 12        android:allowBackup="true"
-12-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:6:9-35
+12-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.5.0] C:\Users\joean\.gradle\caches\transforms-3\109c406f854d135ad1ed87dae876b357\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.5.0] C:\Users\Chase\.gradle\caches\transforms-3\109c406f854d135ad1ed87dae876b357\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:7:9-43
+15-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:7:9-43
 16        android:label="@string/app_name"
-16-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:8:9-41
+16-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:8:9-41
 17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:9:9-54
+17-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:9:9-54
 18        android:supportsRtl="true"
-18-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:10:9-35
+18-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:10:9-35
 19        android:testOnly="true"
 20        android:theme="@style/Theme.Mineweper" >
-20-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:11:9-47
+20-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:11:9-47
 21        <activity
-21-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:12:9-20:20
-22            android:name="com.example.mineweper.MainActivity"
-22-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:13:13-41
-23            android:exported="true" >
-23-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:14:13-36
-24            <intent-filter>
-24-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:15:13-19:29
-25                <action android:name="android.intent.action.MAIN" />
-25-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:16:17-69
-25-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:16:25-66
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:18:17-77
-27-->C:\Users\joean\AndroidStudioProjects\Mineweper\app\src\main\AndroidManifest.xml:18:27-74
-28            </intent-filter>
-29        </activity>
-30    </application>
-31
-32</manifest>
+21-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:12:9-15:75
+22            android:name="com.example.mineweper.Play"
+22-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:13:13-33
+23            android:exported="true"
+23-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:14:13-36
+24            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+24-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:15:13-72
+25        <activity
+25-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:16:9-19:75
+26            android:name="com.example.mineweper.Options"
+26-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:17:13-36
+27            android:exported="true"
+27-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:18:13-36
+28            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+28-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:19:13-72
+29        <activity
+29-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:20:9-23:75
+30            android:name="com.example.mineweper.scores"
+30-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:21:13-35
+31            android:exported="true"
+31-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:22:13-36
+32            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+32-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:23:13-72
+33        <activity
+33-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:24:9-27:75
+34            android:name="com.example.mineweper.Menu0"
+34-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:25:13-34
+35            android:exported="true"
+35-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:26:13-36
+36            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+36-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:27:13-72
+37        <activity
+37-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:28:9-36:20
+38            android:name="com.example.mineweper.MainActivity"
+38-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:29:13-41
+39            android:exported="true" >
+39-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:30:13-36
+40            <intent-filter>
+40-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:31:13-35:29
+41                <action android:name="android.intent.action.MAIN" />
+41-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:32:17-69
+41-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:32:25-66
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:34:17-77
+43-->G:\University\355\Minesweeper\Mineweper\app\src\main\AndroidManifest.xml:34:27-74
+44            </intent-filter>
+45        </activity>
+46    </application>
+47
+48</manifest>

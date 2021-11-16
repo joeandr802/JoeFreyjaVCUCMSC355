@@ -19,6 +19,22 @@
         android:testOnly="true"
         android:theme="@style/Theme.Mineweper" >
         <activity
+            android:name="com.example.mineweper.Play"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name="com.example.mineweper.Options"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name="com.example.mineweper.scores"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name="com.example.mineweper.Menu0"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
             android:name="com.example.mineweper.MainActivity"
             android:exported="true" >
             <intent-filter>

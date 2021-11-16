@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2890625" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2890625" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/layout/activity_main.xml" value="0.1852355072463768" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/layout/activity_menu0.xml" value="0.1852355072463768" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/layout/activity_options.xml" value="0.1852355072463768" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/layout/activity_play.xml" value="0.1852355072463768" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/layout/activity_scores.xml" value="0.14322916666666666" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/layout/content_game.xml" value="0.1852355072463768" />
+        <entry key="..\:/University/355/Minesweeper/Mineweper/app/src/main/res/layout/fragment_first.xml" value="0.1852355072463768" />
         <entry key="..\:/Users/joean/AndroidStudioProjects/Mineweper/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>
