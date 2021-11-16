@@ -1,3 +1,6 @@
+//This is for high scores.
+//Might be able to use this as the screen for scores that are already done
+//As well as adding your own score
 package com.example.mineweper;
 
 import androidx.appcompat.app.AppCompatActivity;

@@ -1,3 +1,4 @@
+//Actual menu. Choose where to go from here.
 package com.example.mineweper;
 
 import androidx.appcompat.app.AppCompatActivity;

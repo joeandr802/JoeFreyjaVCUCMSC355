@@ -1,3 +1,4 @@
+//Splash Screen
 package com.example.mineweper;
 
 import androidx.appcompat.app.AppCompatActivity;
