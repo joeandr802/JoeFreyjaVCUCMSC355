@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 //Sound effect
                 player = MediaPlayer.create(MainActivity.this, R.raw.scramble);
                 player.start();
-
+                //Moving screens
                 Intent intent = new Intent(MainActivity.this, Menu0.class);
                 startActivity(intent);
                 finish();
