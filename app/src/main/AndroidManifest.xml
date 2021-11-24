@@ -12,18 +12,22 @@
         <activity
             android:name=".Play"
             android:exported="true"
+            android:screenOrientation = "landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".Options"
             android:exported="true"
+            android:screenOrientation = "landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".scores"
             android:exported="true"
+            android:screenOrientation = "landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".Menu0"
             android:exported="true"
+            android:screenOrientation = "landscape"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".MainActivity"
