@@ -140,14 +140,14 @@ public class Play extends AppCompatActivity {
     }
     //displays the number of mines neighboring a given tile
 
-    public static boolean shouldReset(char[][] playBoard, char[][] testBoard, int[][] mineLoc, int xCoord, int yCoord){
+    public boolean shouldReset(char[][] playBoard, char[][] testBoard, int[][] mineLoc, int xCoord, int yCoord){
         if(playBoard[xCoord][yCoord] != '~'){
             return false;
         }
         //if the user didn't choose a slot that wasn't already chosen
 
         if(testBoard[xCoord][yCoord] == '*'){
-            System.out.println("|Ha Ha! You Suck!|");
+            setContentView(R.layout.activity_lose);
             return true;
         }
         //if the player chose a bomb
@@ -233,13 +233,24 @@ public class Play extends AppCompatActivity {
     }
     //resets the entire board to a basic state
 
-    public static void playGame(){
+    public static void setTileBoard(Tile[][] tileBoard){
+        for(int i = 0; i<sides; i++){
+            for(int j = 0; j<sides; j++){
+                tileBoard[i][j] = new Tile();
+            }
+        }
+    }
+
+    public void playGame(){
 
         boolean endOfGame = false;
         //flag for if the game has ended
 
         char[][] playBoard= new char[MaxSides][MaxSides], testBoard = new char[MaxSides][MaxSides];
         //creates a board for playing and for testing the code
+
+        Tile[][] tileBoard = new Tile[MaxSides][MaxSides];
+        //creates a board to store the tile objects
 
         howManyMoves = (sides * sides) - mineNumber;
 
@@ -251,6 +262,8 @@ public class Play extends AppCompatActivity {
 
         setBoard(playBoard, testBoard);
         //reset the board
+
+        setTileBoard(tileBoard);
 
         setMines(testBoard, mineLoc);
         //puts the mines randomly in the testingBoard
@@ -279,7 +292,7 @@ public class Play extends AppCompatActivity {
                 curTurn++;
                 endOfGame = shouldReset(playBoard, testBoard, mineLoc, xCoord, yCoord);
                 if(!endOfGame && howManyMoves == 0) {
-                    System.out.println("|Congrats, you win!|");
+                    setContentView(R.layout.activity_win);
                     endOfGame = true;
                 }
             }
