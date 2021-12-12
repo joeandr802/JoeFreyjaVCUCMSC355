@@ -41,7 +41,7 @@ public class Play extends AppCompatActivity {
     }
     //determines if a space is on the board
 
-    public static int countNearbyMines(char[][] testBoard, int xCoord, int yCoord){
+    public static int countNearbyMines(Tile[][] testBoard, int xCoord, int yCoord){
         int counter = 0;
         //how many mines are next to the space chosen
 
@@ -97,93 +97,97 @@ public class Play extends AppCompatActivity {
     }
     //counts how many mines are next to the value chosen
 
-    public static void zeroTiler(char[][] playBoard, char[][]testBoard, int[][] mineLoc, int xCoord, int yCoord){
-        if(validPlay(xCoord-1,yCoord-1) && testBoard[xCoord-1][yCoord-1] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord-1,yCoord-1);
+    public static void zeroTiler(Tile[][]testBoard, int[][] mineLoc, int xCoord, int yCoord){
+        if(validPlay(xCoord-1,yCoord-1) && !testBoard[xCoord-1][yCoord-1].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord-1,yCoord-1);
         }
-        if(validPlay(xCoord,yCoord-1) && testBoard[xCoord][yCoord-1] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord,yCoord-1);
+        if(validPlay(xCoord,yCoord-1) && !testBoard[xCoord][yCoord-1].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord,yCoord-1);
         }
-        if(validPlay(xCoord+1,yCoord-1) && testBoard[xCoord+1][yCoord-1] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord+1,yCoord-1);
+        if(validPlay(xCoord+1,yCoord-1) && !testBoard[xCoord+1][yCoord-1].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord+1,yCoord-1);
         }
-        if(validPlay(xCoord-1,yCoord) && testBoard[xCoord-1][yCoord] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord-1,yCoord);
+        if(validPlay(xCoord-1,yCoord) && !testBoard[xCoord-1][yCoord].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord-1,yCoord);
         }
-        if(validPlay(xCoord+1,yCoord) && testBoard[xCoord+1][yCoord] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord+1,yCoord);
+        if(validPlay(xCoord+1,yCoord) && !testBoard[xCoord+1][yCoord].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord+1,yCoord);
         }
-        if(validPlay(xCoord-1,yCoord+1) && testBoard[xCoord-1][yCoord+1] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord-1,yCoord+1);
+        if(validPlay(xCoord-1,yCoord+1) && !testBoard[xCoord-1][yCoord+1].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord-1,yCoord+1);
         }
-        if(validPlay(xCoord,yCoord+1 )&& testBoard[xCoord][yCoord+1] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord,yCoord+1);
+        if(validPlay(xCoord,yCoord+1 )&& !testBoard[xCoord][yCoord+1].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord,yCoord+1);
         }
-        if(validPlay(xCoord+1,yCoord+1) && testBoard[xCoord+1][yCoord+1] != '0'){
-            displayNum(playBoard,testBoard,mineLoc,xCoord+1,yCoord+1);
+        if(validPlay(xCoord+1,yCoord+1) && !testBoard[xCoord+1][yCoord+1].getHasMine()){
+            displayNum(testBoard,mineLoc,xCoord+1,yCoord+1);
         }
         //if spaces exist next to a space that equals 0, display those tiles as well
     }
     //displays all spaces around a zero tile if it is chosen
 
-    public static void displayNum(char[][] playBoard, char[][] testBoard, int[][] mineLoc, int xCoord, int yCoord){
-        int counter = 0;
-        counter = counter + countNearbyMines(testBoard, xCoord, yCoord);
-        playBoard[xCoord][yCoord] = (char)(counter+'0');
-        testBoard[xCoord][yCoord] = (char)(counter+'0');
+    public static void displayNum(Tile[][] tileBoard, int[][] mineLoc, int xCoord, int yCoord){
+        int counter;
+        counter = countNearbyMines(tileBoard, xCoord, yCoord);
+        tileBoard[xCoord][yCoord].setSurround(counter);
+
+        //CODE FOR HIDING BUTTON AND REVEALING THE SPACE GOES HERE
+
         howManyMoves--;
 
+
         if(counter == 0){
-            zeroTiler(playBoard,testBoard,mineLoc,xCoord,yCoord);
+            zeroTiler(tileBoard,mineLoc,xCoord,yCoord);
         }
         //if a space is chosen that equals 0, show all neighboring tiles
     }
     //displays the number of mines neighboring a given tile
 
-    public boolean shouldReset(char[][] playBoard, char[][] testBoard, int[][] mineLoc, int xCoord, int yCoord){
-        if(playBoard[xCoord][yCoord] != '~'){
+    public boolean shouldReset(Tile[][] tileBoard, int[][] mineLoc, int xCoord, int yCoord){
+        if(tileBoard[xCoord][yCoord].getCovered()){
             return false;
         }
         //if the user didn't choose a slot that wasn't already chosen
 
-        if(testBoard[xCoord][yCoord] == '*'){
+        if(tileBoard[xCoord][yCoord].getHasMine()){
             setContentView(R.layout.activity_lose);
             return true;
         }
         //if the player chose a bomb
 
         else{
-            displayNum(playBoard, testBoard, mineLoc, xCoord, yCoord);
+            displayNum(tileBoard, mineLoc, xCoord, yCoord);
             //counts how many moves need to be made before the user is done
 
             return false;
         }
     }
 
-    public static void resetMine(int x, int y, char[][] testboard){
-        int i,j;
+    public static void resetMine(int x, int y, Tile[][] tileBoard) {
+        int newX, newY, randomLoc;
 
-        for(i = 0; i < sides; i++){
-            for(j = 0; j< sides; j++){
-                if(testboard[i][j] != '*'){
-                    testboard[i][j] = '*';
-                    testboard[x][y] = '~';
-                    return;
-                }
-                //makes the first location without the bomb have one instead of the one chosen by the user
+        while(tileBoard[x][y].getHasMine()) {
+            randomLoc = (int) (Math.random() * (sides * sides));
+            newX = randomLoc / sides;
+            newY = randomLoc % sides;
+
+            if(!tileBoard[newX][newY].getHasMine()) {
+                tileBoard[newX][newY].setHasMine(true);
+                tileBoard[x][y].setHasMine(false);
             }
         }
     }
     //moves the mine in case the first move would've chosen it
 
-    public static boolean mineIsHere(int x, int y, char[][] testBoard){
+    public static boolean mineIsHere(int x, int y, Tile[][] tileBoard){
         if(validPlay(x, y)) {
-            return testBoard[x][y] == '*';
+            return tileBoard[x][y].getHasMine();
         }
         return false;
     }
     //tells if a mine is at the given location
 
+    /*
     public static void showTheBoard(char[][] playBoard){
         int i, j;
 
@@ -194,8 +198,9 @@ public class Play extends AppCompatActivity {
             //prints the game board, row by row
         }
     }
+     */
 
-    public static void setMines(char[][] testBoard, int[][] mineLoc){
+    public static void setMines(Tile[][] tileBoard, int[][] mineLoc){
         boolean[] marker= new boolean[MaxSides * MaxSides];
         int xCoord, yCoord, randomLoc;
 
@@ -210,7 +215,7 @@ public class Play extends AppCompatActivity {
                 mineLoc[i][1] = yCoord;
                 //keeps track of the location of this mine
 
-                testBoard[mineLoc[i][0]][mineLoc[i][1]] = '*';
+                tileBoard[mineLoc[i][0]][mineLoc[i][1]].setHasMine(true);
                 //stores the mine in the actual testBoard
 
                 marker[randomLoc] = true;
@@ -223,6 +228,7 @@ public class Play extends AppCompatActivity {
     }
     //chooses where the locations of the mines will be
 
+    /*
     public static void setBoard(char[][] playBoard, char[][] testBoard){
         for(int i = 0; i<sides; i++){
             for(int j = 0; j<sides; j++){
@@ -232,6 +238,7 @@ public class Play extends AppCompatActivity {
         }
     }
     //resets the entire board to a basic state
+     */
 
     public static void setTileBoard(Tile[][] tileBoard){
         for(int i = 0; i<sides; i++){
@@ -246,9 +253,6 @@ public class Play extends AppCompatActivity {
         boolean endOfGame = false;
         //flag for if the game has ended
 
-        char[][] playBoard= new char[MaxSides][MaxSides], testBoard = new char[MaxSides][MaxSides];
-        //creates a board for playing and for testing the code
-
         Tile[][] tileBoard = new Tile[MaxSides][MaxSides];
         //creates a board to store the tile objects
 
@@ -260,44 +264,34 @@ public class Play extends AppCompatActivity {
         int xCoord, yCoord;
         //coordinates of location choice for later on
 
-        setBoard(playBoard, testBoard);
-        //reset the board
-
         setTileBoard(tileBoard);
 
-        setMines(testBoard, mineLoc);
+        setMines(tileBoard, mineLoc);
         //puts the mines randomly in the testingBoard
 
         int curTurn = 0;
         //makes sure first tile chosen isn't a bomb
 
         while(!endOfGame){
-            showTheBoard(playBoard);
-            //displays the current board every turn
-
-            System.out.println("What is the x coordinate of your choice?");
-            xCoord = scan.nextInt();
-            System.out.println("What is the y coordinate of your choice?");
-            yCoord = scan.nextInt();
             //gets location choice from user
 
             if (curTurn == 0){
-                if(mineIsHere(xCoord, yCoord, testBoard)){
-                    resetMine(xCoord, yCoord, testBoard);
+                if(mineIsHere(xCoord, yCoord, tileBoard)){
+                    resetMine(xCoord, yCoord, tileBoard);
                 }
             }
             //makes sure first tile isn't a mine
 
             if(!isFlagging){
                 curTurn++;
-                endOfGame = shouldReset(playBoard, testBoard, mineLoc, xCoord, yCoord);
+                endOfGame = shouldReset(tileBoard, mineLoc, xCoord, yCoord);
                 if(!endOfGame && howManyMoves == 0) {
                     setContentView(R.layout.activity_win);
                     endOfGame = true;
                 }
             }
             else {
-                playBoard[xCoord][yCoord] = 'f';
+                tileBoard[xCoord][yCoord].toggleFlagged();
             }
         }
         //While the user has tiles left to remove and hasn't blown up a bomb, the game runs
