@@ -28,7 +28,7 @@ public class Tile {
     }
 
     public boolean getHasMine() {
-        return hasMine;
+        return hasMine || getSurround() == 9;
     }
 
     public void setHasMine(boolean mine) {
