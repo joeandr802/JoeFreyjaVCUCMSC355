@@ -9,11 +9,12 @@ import android.os.Bundle;
 public class Play extends AppCompatActivity {
 
     public Button button;
-    static int sides;
-    static int mineNumber;
+    static int sides = 8;
+    static int mineNumber = 10;
     static int howManyMoves;
     static int MaxSides = 18;
     static int MaxMines = 70;
+    static boolean isFlagging = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +22,18 @@ public class Play extends AppCompatActivity {
         setContentView(R.layout.activity_play);
 
         button = findViewById(R.id.back);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Play.this, Menu0.class);
-                startActivity(intent);
-            }
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(Play.this, Menu0.class);
+            startActivity(intent);
         });
 
-        difficulty();
+        button = findViewById(R.id.flagOn);
+        button.setOnClickListener(v -> isFlagging = true);
+
+        button = findViewById(R.id.flagOff);
+        button.setOnClickListener(v -> isFlagging = false);
+
+        //difficulty();
         playGame();
     }
 
@@ -145,7 +148,6 @@ public class Play extends AppCompatActivity {
         //if the user didn't choose a slot that wasn't already chosen
 
         if(testBoard[xCoord][yCoord] == '*'){
-            showTheBoard(testBoard);
             System.out.println("|Ha Ha! You Suck!|");
             return true;
         }
@@ -237,9 +239,6 @@ public class Play extends AppCompatActivity {
         boolean endOfGame = false;
         //flag for if the game has ended
 
-        boolean flagger = false;
-        //letting the system know if you want to flag a tile
-
         char[][] playBoard= new char[MaxSides][MaxSides], testBoard = new char[MaxSides][MaxSides];
         //creates a board for playing and for testing the code
 
@@ -263,11 +262,6 @@ public class Play extends AppCompatActivity {
             showTheBoard(playBoard);
             //displays the current board every turn
 
-            System.out.println("Do you want to flag? 1 for yes");
-            if(scan.nextInt() == 1)
-                flagger = true;
-            //asks if flag should be placed
-
             System.out.println("What is the x coordinate of your choice?");
             xCoord = scan.nextInt();
             System.out.println("What is the y coordinate of your choice?");
@@ -281,7 +275,7 @@ public class Play extends AppCompatActivity {
             }
             //makes sure first tile isn't a mine
 
-            if(!flagger){
+            if(!isFlagging){
                 curTurn++;
                 endOfGame = shouldReset(playBoard, testBoard, mineLoc, xCoord, yCoord);
                 if(!endOfGame && howManyMoves == 0) {
@@ -291,13 +285,13 @@ public class Play extends AppCompatActivity {
             }
             else {
                 playBoard[xCoord][yCoord] = 'f';
-                flagger = false;
             }
         }
         //While the user has tiles left to remove and hasn't blown up a bomb, the game runs
 
     }
 
+    /* unused diffculty feature; to be implemented later time allowing
     public static void difficulty(){
         int diff;
 
@@ -319,4 +313,5 @@ public class Play extends AppCompatActivity {
         }
     }
     //sets the values for the size of the board based on the difficulty selected by the user
+     */
 }
