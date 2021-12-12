@@ -14,6 +14,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile46"
         app:layout_constraintEnd_toStartOf="@+id/tile55"
         app:layout_constraintStart_toEndOf="@+id/tile35"
         app:layout_constraintTop_toBottomOf="@+id/tile44" />
@@ -26,6 +27,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile56"
         app:layout_constraintEnd_toStartOf="@+id/tile65"
         app:layout_constraintStart_toEndOf="@+id/tile45"
         app:layout_constraintTop_toBottomOf="@+id/tile54" />
@@ -39,6 +41,7 @@
         android:layout_marginEnd="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile76"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tile65"
         app:layout_constraintTop_toBottomOf="@+id/tile74" />
@@ -51,6 +54,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile47"
         app:layout_constraintEnd_toStartOf="@+id/tile56"
         app:layout_constraintStart_toEndOf="@+id/tile36"
         app:layout_constraintTop_toBottomOf="@+id/tile45" />
@@ -63,6 +67,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile57"
         app:layout_constraintEnd_toStartOf="@+id/tile66"
         app:layout_constraintStart_toEndOf="@+id/tile46"
         app:layout_constraintTop_toBottomOf="@+id/tile55" />
@@ -76,6 +81,7 @@
         android:layout_marginEnd="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile77"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tile66"
         app:layout_constraintTop_toBottomOf="@+id/tile75" />
@@ -115,8 +121,10 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="7dp"
+        android:layout_marginBottom="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tile67"
         app:layout_constraintTop_toBottomOf="@+id/tile76" />
@@ -169,8 +177,10 @@
         android:layout_height="48dp"
         android:layout_marginStart="2dp"
         android:layout_marginTop="2dp"
+        android:layout_marginBottom="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tile77"
         app:layout_constraintStart_toEndOf="@+id/tile57"
         app:layout_constraintTop_toBottomOf="@+id/tile66" />
@@ -183,6 +193,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile37"
         app:layout_constraintEnd_toStartOf="@+id/tile46"
         app:layout_constraintStart_toEndOf="@+id/tile26"
         app:layout_constraintTop_toBottomOf="@+id/tile35" />
@@ -195,6 +206,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile27"
         app:layout_constraintEnd_toStartOf="@+id/tile36"
         app:layout_constraintStart_toEndOf="@+id/tile16"
         app:layout_constraintTop_toBottomOf="@+id/tile25" />
@@ -207,6 +219,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile17"
         app:layout_constraintEnd_toStartOf="@+id/tile26"
         app:layout_constraintStart_toEndOf="@+id/tile06"
         app:layout_constraintTop_toBottomOf="@+id/tile15" />
@@ -219,6 +232,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile67"
         app:layout_constraintEnd_toStartOf="@+id/tile76"
         app:layout_constraintStart_toEndOf="@+id/tile56"
         app:layout_constraintTop_toBottomOf="@+id/tile65" />
@@ -231,6 +245,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile36"
         app:layout_constraintEnd_toStartOf="@+id/tile45"
         app:layout_constraintStart_toEndOf="@+id/tile25"
         app:layout_constraintTop_toBottomOf="@+id/tile34" />
@@ -243,6 +258,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile26"
         app:layout_constraintEnd_toStartOf="@+id/tile35"
         app:layout_constraintStart_toEndOf="@+id/tile15"
         app:layout_constraintTop_toBottomOf="@+id/tile24" />
@@ -255,6 +271,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile16"
         app:layout_constraintEnd_toStartOf="@+id/tile25"
         app:layout_constraintStart_toEndOf="@+id/tile05"
         app:layout_constraintTop_toBottomOf="@+id/tile14" />
@@ -267,6 +284,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile66"
         app:layout_constraintEnd_toStartOf="@+id/tile75"
         app:layout_constraintStart_toEndOf="@+id/tile55"
         app:layout_constraintTop_toBottomOf="@+id/tile64" />
@@ -279,6 +297,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile45"
         app:layout_constraintEnd_toStartOf="@+id/tile54"
         app:layout_constraintStart_toEndOf="@+id/tile34"
         app:layout_constraintTop_toBottomOf="@+id/tile43" />
@@ -291,6 +310,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile55"
         app:layout_constraintEnd_toStartOf="@+id/tile64"
         app:layout_constraintStart_toEndOf="@+id/tile44"
         app:layout_constraintTop_toBottomOf="@+id/tile53" />
@@ -304,6 +324,7 @@
         android:layout_marginEnd="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile75"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tile64"
         app:layout_constraintTop_toBottomOf="@+id/tile73" />
@@ -316,6 +337,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile35"
         app:layout_constraintEnd_toStartOf="@+id/tile44"
         app:layout_constraintStart_toEndOf="@+id/tile24"
         app:layout_constraintTop_toBottomOf="@+id/tile33" />
@@ -328,6 +350,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile25"
         app:layout_constraintEnd_toStartOf="@+id/tile34"
         app:layout_constraintStart_toEndOf="@+id/tile14"
         app:layout_constraintTop_toBottomOf="@+id/tile23" />
@@ -340,6 +363,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile15"
         app:layout_constraintEnd_toStartOf="@+id/tile24"
         app:layout_constraintStart_toEndOf="@+id/tile04"
         app:layout_constraintTop_toBottomOf="@+id/tile13" />
@@ -352,6 +376,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile65"
         app:layout_constraintEnd_toStartOf="@+id/tile74"
         app:layout_constraintStart_toEndOf="@+id/tile54"
         app:layout_constraintTop_toBottomOf="@+id/tile63" />
@@ -364,6 +389,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile44"
         app:layout_constraintEnd_toStartOf="@+id/tile53"
         app:layout_constraintStart_toEndOf="@+id/tile33"
         app:layout_constraintTop_toBottomOf="@+id/tile42" />
@@ -376,6 +402,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile54"
         app:layout_constraintEnd_toStartOf="@+id/tile63"
         app:layout_constraintStart_toEndOf="@+id/tile43"
         app:layout_constraintTop_toBottomOf="@+id/tile52" />
@@ -389,6 +416,7 @@
         android:layout_marginEnd="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile74"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tile63"
         app:layout_constraintTop_toBottomOf="@+id/tile72" />
@@ -401,6 +429,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile34"
         app:layout_constraintEnd_toStartOf="@+id/tile43"
         app:layout_constraintStart_toEndOf="@+id/tile23"
         app:layout_constraintTop_toBottomOf="@+id/tile32" />
@@ -413,6 +442,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile24"
         app:layout_constraintEnd_toStartOf="@+id/tile33"
         app:layout_constraintStart_toEndOf="@+id/tile13"
         app:layout_constraintTop_toBottomOf="@+id/tile22" />
@@ -425,6 +455,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile14"
         app:layout_constraintEnd_toStartOf="@+id/tile23"
         app:layout_constraintStart_toEndOf="@+id/tile03"
         app:layout_constraintTop_toBottomOf="@+id/tile12" />
@@ -437,6 +468,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile64"
         app:layout_constraintEnd_toStartOf="@+id/tile73"
         app:layout_constraintStart_toEndOf="@+id/tile53"
         app:layout_constraintTop_toBottomOf="@+id/tile62" />
@@ -449,6 +481,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile43"
         app:layout_constraintEnd_toStartOf="@+id/tile52"
         app:layout_constraintStart_toEndOf="@+id/tile32"
         app:layout_constraintTop_toBottomOf="@+id/tile41" />
@@ -461,6 +494,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile53"
         app:layout_constraintEnd_toStartOf="@+id/tile62"
         app:layout_constraintStart_toEndOf="@+id/tile42"
         app:layout_constraintTop_toBottomOf="@+id/tile51" />
@@ -474,6 +508,7 @@
         android:layout_marginEnd="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile73"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tile62"
         app:layout_constraintTop_toBottomOf="@+id/tile71" />
@@ -486,6 +521,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile33"
         app:layout_constraintEnd_toStartOf="@+id/tile42"
         app:layout_constraintStart_toEndOf="@+id/tile22"
         app:layout_constraintTop_toBottomOf="@+id/tile31" />
@@ -498,6 +534,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile23"
         app:layout_constraintEnd_toStartOf="@+id/tile32"
         app:layout_constraintStart_toEndOf="@+id/tile12"
         app:layout_constraintTop_toBottomOf="@+id/tile21" />
@@ -510,6 +547,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile13"
         app:layout_constraintEnd_toStartOf="@+id/tile22"
         app:layout_constraintStart_toEndOf="@+id/tile02"
         app:layout_constraintTop_toBottomOf="@+id/tile11" />
@@ -522,6 +560,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile63"
         app:layout_constraintEnd_toStartOf="@+id/tile72"
         app:layout_constraintStart_toEndOf="@+id/tile52"
         app:layout_constraintTop_toBottomOf="@+id/tile61" />
@@ -535,6 +574,7 @@
         android:layout_marginEnd="7dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile72"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tile61"
         app:layout_constraintTop_toBottomOf="@+id/tile70" />
@@ -547,6 +587,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile62"
         app:layout_constraintEnd_toStartOf="@+id/tile71"
         app:layout_constraintStart_toEndOf="@+id/tile51"
         app:layout_constraintTop_toBottomOf="@+id/tile60" />
@@ -559,6 +600,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile52"
         app:layout_constraintEnd_toStartOf="@+id/tile61"
         app:layout_constraintStart_toEndOf="@+id/tile41"
         app:layout_constraintTop_toBottomOf="@+id/tile50" />
@@ -571,6 +613,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile42"
         app:layout_constraintEnd_toStartOf="@+id/tile51"
         app:layout_constraintStart_toEndOf="@+id/tile31"
         app:layout_constraintTop_toBottomOf="@+id/tile40" />
@@ -583,6 +626,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile32"
         app:layout_constraintEnd_toStartOf="@+id/tile41"
         app:layout_constraintStart_toEndOf="@+id/tile21"
         app:layout_constraintTop_toBottomOf="@+id/tile30" />
@@ -595,6 +639,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile22"
         app:layout_constraintEnd_toStartOf="@+id/tile31"
         app:layout_constraintStart_toEndOf="@+id/tile11"
         app:layout_constraintTop_toBottomOf="@+id/tile20" />
@@ -607,6 +652,7 @@
         android:layout_marginTop="2dp"
         android:text="-"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/tile12"
         app:layout_constraintEnd_toStartOf="@+id/tile21"
         app:layout_constraintStart_toEndOf="@+id/tile01"
         app:layout_constraintTop_toBottomOf="@+id/tile10" />
@@ -673,6 +719,7 @@
         android:text="-"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tile07"
+        app:layout_constraintEnd_toStartOf="@+id/tile16"
         app:layout_constraintStart_toEndOf="@+id/flagOff"
         app:layout_constraintTop_toBottomOf="@+id/tile05" />
 
@@ -686,6 +733,7 @@
         android:text="-"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tile17"
         app:layout_constraintStart_toEndOf="@+id/flagOff"
         app:layout_constraintTop_toBottomOf="@+id/tile06" />
 
@@ -698,6 +746,7 @@
         android:text="-"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tile06"
+        app:layout_constraintEnd_toStartOf="@+id/tile15"
         app:layout_constraintStart_toEndOf="@+id/flagOff"
         app:layout_constraintTop_toBottomOf="@+id/tile04" />
 
@@ -710,6 +759,7 @@
         android:text="-"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tile05"
+        app:layout_constraintEnd_toStartOf="@+id/tile14"
         app:layout_constraintStart_toEndOf="@+id/flagOff"
         app:layout_constraintTop_toBottomOf="@+id/tile03" />
 
@@ -834,6 +884,7 @@
         android:text="-"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tile03"
+        app:layout_constraintEnd_toStartOf="@+id/tile12"
         app:layout_constraintStart_toEndOf="@+id/flagOff"
         app:layout_constraintTop_toBottomOf="@+id/tile01" />
 
@@ -846,6 +897,7 @@
         android:text="-"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tile04"
+        app:layout_constraintEnd_toStartOf="@+id/tile13"
         app:layout_constraintStart_toEndOf="@+id/flagOff"
         app:layout_constraintTop_toBottomOf="@+id/tile02" />
 </androidx.constraintlayout.widget.ConstraintLayout>

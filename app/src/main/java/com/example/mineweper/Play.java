@@ -169,36 +169,62 @@ public class Play extends AppCompatActivity {
     //counts how many mines are next to the value chosen
 
     public void zeroTiler(Tile[][]testBoard, int xCoord, int yCoord){
+        int buttonId;
+
         if(validPlay(xCoord-1,yCoord-1) &&
-                !testBoard[xCoord-1][yCoord-1].getHasMine()){
+                testBoard[xCoord-1][yCoord-1].getSurround()!=0){
+            buttonId = BUTTON_IDS[((xCoord-1)*8)+yCoord-1];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord-1,yCoord-1);
         }
         if(validPlay(xCoord,yCoord-1) &&
-                !testBoard[xCoord][yCoord-1].getHasMine()){
+                testBoard[xCoord][yCoord-1].getSurround()!=0){
+            buttonId = BUTTON_IDS[(xCoord*8)+yCoord-1];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord,yCoord-1);
         }
         if(validPlay(xCoord+1,yCoord-1) &&
-                !testBoard[xCoord+1][yCoord-1].getHasMine()){
+                testBoard[xCoord+1][yCoord-1].getSurround()!=0){
+            buttonId = BUTTON_IDS[((xCoord+1)*8)+yCoord-1];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord+1,yCoord-1);
         }
         if(validPlay(xCoord-1,yCoord) &&
-                !testBoard[xCoord-1][yCoord].getHasMine()){
+                testBoard[xCoord-1][yCoord].getSurround()!=0){
+            buttonId = BUTTON_IDS[((xCoord-1)*8)+yCoord];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord-1,yCoord);
         }
         if(validPlay(xCoord+1,yCoord) &&
-                !testBoard[xCoord+1][yCoord].getHasMine()){
+                testBoard[xCoord+1][yCoord].getSurround()!=0){
+            buttonId = BUTTON_IDS[((xCoord+1)*8)+yCoord];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord+1,yCoord);
         }
         if(validPlay(xCoord-1,yCoord+1) &&
-                !testBoard[xCoord-1][yCoord+1].getHasMine()){
+                testBoard[xCoord-1][yCoord+1].getSurround()!=0){
+            buttonId = BUTTON_IDS[((xCoord-1)*8)+yCoord+1];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord-1,yCoord+1);
         }
         if(validPlay(xCoord,yCoord+1 )&&
-                !testBoard[xCoord][yCoord+1].getHasMine()){
+                testBoard[xCoord][yCoord+1].getSurround()!=0){
+            buttonId = BUTTON_IDS[(xCoord*8)+yCoord+1];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord,yCoord+1);
         }
         if(validPlay(xCoord+1,yCoord+1) &&
-                !testBoard[xCoord+1][yCoord+1].getHasMine()){
+                testBoard[xCoord+1][yCoord+1].getSurround()!=0){
+            buttonId = BUTTON_IDS[((xCoord+1)*8)+yCoord+1];
+            button = findViewById(buttonId);
+            button.performClick();
             displayNum(testBoard,xCoord+1,yCoord+1);
         }
         //if spaces exist next to a space that equals 0, display those tiles as well
@@ -297,7 +323,7 @@ public class Play extends AppCompatActivity {
 
                 int buttonId;
 
-                buttonId = BUTTON_IDS[(i*10)+j];
+                buttonId = BUTTON_IDS[(i*8)+j];
                 tileBoard[i][j] = new Tile(i, j, buttonId);
 
                 button = findViewById(buttonId);
@@ -308,9 +334,9 @@ public class Play extends AppCompatActivity {
                         if (isFlagging) {
                             findTileById(tileBoard, button.getId()).toggleFlagged();
                             if (findTileById(tileBoard, button.getId()).getFlagged()) {
-                                button.setText('F');
+                                button.setText("F");
                             } else {
-                                button.setText('-');
+                                button.setText("-");
                             }
                         }
                         //handles flagging a space
@@ -331,8 +357,9 @@ public class Play extends AppCompatActivity {
                             //checks for empty tiles and whether the game should end
 
                             findTileById(tileBoard, button.getId()).uncover();
-                            button.setText(
-                                    (char) findTileById(tileBoard, button.getId()).getSurround());
+
+                            button.setText(String.valueOf(findTileById(tileBoard,
+                                    button.getId()).getSurround()));
                         }
                         //handles uncovering a space
                     }
