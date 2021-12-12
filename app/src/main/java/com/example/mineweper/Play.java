@@ -6,16 +6,18 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class Play extends AppCompatActivity {
 
     public Button button;
-    static int sides = 8;
-    static int mineNumber = 10;
+    static int sides;
+    static int mineNumber;
     static int howManyMoves;
     static int MaxSides = 18;
     static int MaxMines = 70;
     static boolean isFlagging = false;
+
     static int[] BUTTON_IDS = {
             R.id.tile00,
             R.id.tile01,
@@ -82,6 +84,75 @@ public class Play extends AppCompatActivity {
             R.id.tile76,
             R.id.tile77
     };
+    //array of tile ids in activity_play.xml
+
+    static int[] TEXT_IDS = {
+            R.id.text00,
+            R.id.text01,
+            R.id.text02,
+            R.id.text03,
+            R.id.text04,
+            R.id.text05,
+            R.id.text06,
+            R.id.text07,
+            R.id.text10,
+            R.id.text11,
+            R.id.text12,
+            R.id.text13,
+            R.id.text14,
+            R.id.text15,
+            R.id.text16,
+            R.id.text17,
+            R.id.text20,
+            R.id.text21,
+            R.id.text22,
+            R.id.text23,
+            R.id.text24,
+            R.id.text25,
+            R.id.text26,
+            R.id.text27,
+            R.id.text30,
+            R.id.text31,
+            R.id.text32,
+            R.id.text33,
+            R.id.text34,
+            R.id.text35,
+            R.id.text36,
+            R.id.text37,
+            R.id.text40,
+            R.id.text41,
+            R.id.text42,
+            R.id.text43,
+            R.id.text44,
+            R.id.text45,
+            R.id.text46,
+            R.id.text47,
+            R.id.text50,
+            R.id.text51,
+            R.id.text52,
+            R.id.text53,
+            R.id.text54,
+            R.id.text55,
+            R.id.text56,
+            R.id.text57,
+            R.id.text60,
+            R.id.text61,
+            R.id.text62,
+            R.id.text63,
+            R.id.text64,
+            R.id.text65,
+            R.id.text66,
+            R.id.text67,
+            R.id.text70,
+            R.id.text71,
+            R.id.text72,
+            R.id.text73,
+            R.id.text74,
+            R.id.text75,
+            R.id.text76,
+            R.id.text77
+    };
+    //array of text ids in activity_play.xml
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +178,7 @@ public class Play extends AppCompatActivity {
     }
 
     public static boolean validPlay(int xCoord, int yCoord){
-        return (xCoord >= 0 && xCoord < sides) && (yCoord >= 0 && yCoord < sides);
+        return (xCoord > -1 && xCoord < sides) && (yCoord > -1 && yCoord < sides);
     }
     //determines if a space is on the board
 
@@ -168,28 +239,36 @@ public class Play extends AppCompatActivity {
     //counts how many mines are next to the value chosen
 
     public void zeroTiler(Tile[][]testBoard, int xCoord, int yCoord){
-        if(validPlay(xCoord-1,yCoord-1) && !testBoard[xCoord-1][yCoord-1].getHasMine()){
+        if(validPlay(xCoord-1,yCoord-1) &&
+                !testBoard[xCoord-1][yCoord-1].getHasMine()){
             displayNum(testBoard,xCoord-1,yCoord-1);
         }
-        if(validPlay(xCoord,yCoord-1) && !testBoard[xCoord][yCoord-1].getHasMine()){
+        if(validPlay(xCoord,yCoord-1) &&
+                !testBoard[xCoord][yCoord-1].getHasMine()){
             displayNum(testBoard,xCoord,yCoord-1);
         }
-        if(validPlay(xCoord+1,yCoord-1) && !testBoard[xCoord+1][yCoord-1].getHasMine()){
+        if(validPlay(xCoord+1,yCoord-1) &&
+                !testBoard[xCoord+1][yCoord-1].getHasMine()){
             displayNum(testBoard,xCoord+1,yCoord-1);
         }
-        if(validPlay(xCoord-1,yCoord) && !testBoard[xCoord-1][yCoord].getHasMine()){
+        if(validPlay(xCoord-1,yCoord) &&
+                !testBoard[xCoord-1][yCoord].getHasMine()){
             displayNum(testBoard,xCoord-1,yCoord);
         }
-        if(validPlay(xCoord+1,yCoord) && !testBoard[xCoord+1][yCoord].getHasMine()){
+        if(validPlay(xCoord+1,yCoord) &&
+                !testBoard[xCoord+1][yCoord].getHasMine()){
             displayNum(testBoard,xCoord+1,yCoord);
         }
-        if(validPlay(xCoord-1,yCoord+1) && !testBoard[xCoord-1][yCoord+1].getHasMine()){
+        if(validPlay(xCoord-1,yCoord+1) &&
+                !testBoard[xCoord-1][yCoord+1].getHasMine()){
             displayNum(testBoard,xCoord-1,yCoord+1);
         }
-        if(validPlay(xCoord,yCoord+1 )&& !testBoard[xCoord][yCoord+1].getHasMine()){
+        if(validPlay(xCoord,yCoord+1 )&&
+                !testBoard[xCoord][yCoord+1].getHasMine()){
             displayNum(testBoard,xCoord,yCoord+1);
         }
-        if(validPlay(xCoord+1,yCoord+1) && !testBoard[xCoord+1][yCoord+1].getHasMine()){
+        if(validPlay(xCoord+1,yCoord+1) &&
+                !testBoard[xCoord+1][yCoord+1].getHasMine()){
             displayNum(testBoard,xCoord+1,yCoord+1);
         }
         //if spaces exist next to a space that equals 0, display those tiles as well
@@ -275,7 +354,7 @@ public class Play extends AppCompatActivity {
 
                 marker[randomLoc] = true;
                 i++;
-                //makes the randomizer not choose the same mine location twice and keeps track that a mine was set
+                //helps the randomizer choose unique mine locations and keeps track of set mines
             }
         }
         //sets mines on the board used to check if a mine is chosen
@@ -286,18 +365,28 @@ public class Play extends AppCompatActivity {
         for(int i = 0; i<sides; i++){
             for(int j = 0; j<sides; j++){
 
-                for (int id: BUTTON_IDS) {
-                    buttonBoard[i][j] = findViewById(id);
-                    tileBoard[i][j] = new Tile(i, j, id);
-                }
+                int buttonId, textId;
+                TextView tileFlag;
 
-                button = buttonBoard[i][j];
+                buttonId = BUTTON_IDS[(i*10)+j];
+                textId = TEXT_IDS[(i*10)+j];
+                tileBoard[i][j] = new Tile(i, j, buttonId);
+
+                button = findViewById(buttonId);
+                tileFlag = findViewById(textId);
+
                 button.setOnClickListener(v -> {
                     if (isFlagging) {
                         findTileById(tileBoard, button.getId()).toggleFlagged();
-                        button.setVisibility(View.INVISIBLE);
-                        //test for idea i have
+                        if (findTileById(tileBoard, button.getId()).getFlagged()) {
+                            tileFlag.setText('F');
+                            button.setVisibility(View.INVISIBLE);
+                        }
+                        else {
+                            button.setVisibility(View.VISIBLE);
+                        }
                     }
+                    //handles flagging a space
 
                     else {
                         if (howManyMoves == (sides * sides) - mineNumber){
@@ -307,20 +396,36 @@ public class Play extends AppCompatActivity {
                                         findTileById(tileBoard, button.getId()).getY(), tileBoard);
                             }
                         }
+                        //if this is the first turn and a mine is hit, reroll the mine
 
                         displayNum(tileBoard,
                                 findTileById(tileBoard, button.getId()).getX(),
                                 findTileById(tileBoard, button.getId()).getY());
+                        //checks for empty tiles and whether the game should end
 
-                        //CODE FOR REVEALING THE SPACE GOES HERE
-
+                        findTileById(tileBoard, button.getId()).uncover();
+                        tileFlag.setText(
+                                (char)findTileById(tileBoard, button.getId()).getSurround());
                         button.setVisibility(View.GONE);
-                        //default for now; makes button disappear
                     }
+                    //handles uncovering a space
                 });
+
+                buttonBoard[i][j] = button;
             }
         }
     }
+    //sets up the board
+
+    public int findIndexById(int id) {
+        for(int i = 0; i<BUTTON_IDS.length; i++) {
+            if (BUTTON_IDS[i] == id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    //given an id of a button, finds its corresponding index in one of the id arrays and returns it
 
     public Tile findTileById(Tile[][] tileBoard, int id) {
         for(int i = 0; i<sides; i++) {
@@ -332,15 +437,20 @@ public class Play extends AppCompatActivity {
         }
         return null;
     }
+    //given an id of a button, finds its corresponding Tile and returns it
 
-    public void playGame(){
+    public void playGame() {
+
+        sides = 8;
+        mineNumber = 10;
+        howManyMoves = (sides * sides) - mineNumber;
+        //formula used to determine the number of non-mine spaces
 
         Tile[][] tileBoard = new Tile[sides][sides];
         //creates a board to store the tile objects
 
         Button[][] buttonBoard = new Button[sides][sides];
-
-        howManyMoves = (sides * sides) - mineNumber;
+        //a board to store the button objects
 
         int[][] mineLoc = new int[MaxMines][2];
         //keeps track if player has uncovered all non-mine tiles and where the mines are
@@ -351,4 +461,5 @@ public class Play extends AppCompatActivity {
         setMines(tileBoard, mineLoc);
         //puts the mines randomly in the testingBoard
     }
+    //plays the game
 }
