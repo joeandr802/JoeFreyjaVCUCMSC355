@@ -17,7 +17,7 @@ public class scores extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scores);
 
-        button = (Button) findViewById(R.id.back);
+        button = (Button) findViewById(R.id.mainMenu);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

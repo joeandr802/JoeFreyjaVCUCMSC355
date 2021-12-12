@@ -18,7 +18,7 @@ public class Options extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
 
-        button = (Button) findViewById(R.id.back);
+        button = (Button) findViewById(R.id.mainMenu);
 
         //sound test buttons
         btnplay = findViewById(R.id.startSound);

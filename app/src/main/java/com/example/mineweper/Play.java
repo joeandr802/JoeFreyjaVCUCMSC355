@@ -3,7 +3,6 @@ package com.example.mineweper;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
 import android.content.Intent;
-import android.view.View;
 import android.os.Bundle;
 
 public class Play extends AppCompatActivity {
@@ -21,7 +20,7 @@ public class Play extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        button = findViewById(R.id.back);
+        button = findViewById(R.id.mainMenu);
         button.setOnClickListener(v -> {
             Intent intent = new Intent(Play.this, Menu0.class);
             startActivity(intent);
@@ -42,7 +41,7 @@ public class Play extends AppCompatActivity {
     }
     //determines if a space is on the board
 
-    public static int countNearbyMines(char[][] testBoard, int[][] mineLoc, int xCoord, int yCoord){
+    public static int countNearbyMines(char[][] testBoard, int xCoord, int yCoord){
         int counter = 0;
         //how many mines are next to the space chosen
 
@@ -129,7 +128,7 @@ public class Play extends AppCompatActivity {
 
     public static void displayNum(char[][] playBoard, char[][] testBoard, int[][] mineLoc, int xCoord, int yCoord){
         int counter = 0;
-        counter = counter + countNearbyMines(testBoard, mineLoc, xCoord, yCoord);
+        counter = counter + countNearbyMines(testBoard, xCoord, yCoord);
         playBoard[xCoord][yCoord] = (char)(counter+'0');
         testBoard[xCoord][yCoord] = (char)(counter+'0');
         howManyMoves--;
@@ -177,9 +176,9 @@ public class Play extends AppCompatActivity {
     }
     //moves the mine in case the first move would've chosen it
 
-    public static boolean mineIsHere(int x, int y, char[][] testboard){
+    public static boolean mineIsHere(int x, int y, char[][] testBoard){
         if(validPlay(x, y)) {
-            return testboard[x][y] == '*';
+            return testBoard[x][y] == '*';
         }
         return false;
     }
@@ -243,6 +242,7 @@ public class Play extends AppCompatActivity {
         //creates a board for playing and for testing the code
 
         howManyMoves = (sides * sides) - mineNumber;
+
         int[][] mineLoc = new int[MaxMines][2];
         //keeps track if player has uncovered all non-mine tiles and where the mines are
 
