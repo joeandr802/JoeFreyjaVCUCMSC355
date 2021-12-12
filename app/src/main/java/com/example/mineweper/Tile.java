@@ -5,12 +5,18 @@ public class Tile {
     private boolean covered;
     private boolean hasMine;
     private int surround;
+    private static int xCoord;
+    private static int yCoord;
+    private static int buttonID;
 
-    public Tile() {
+    public Tile(int x, int y, int id) {
         flagged = false;
         covered = true;
         hasMine = false;
         surround = 0;
+        xCoord = x;
+        yCoord = y;
+        buttonID = id;
     }
 
     public boolean getFlagged() {
@@ -48,5 +54,17 @@ public class Tile {
         if (-1 < mineNum && mineNum < 9) {
             surround = mineNum;
         }
+    }
+
+    public int getX() {
+        return xCoord;
+    }
+
+    public int getY() {
+        return yCoord;
+    }
+
+    public int getButtonID() {
+        return buttonID;
     }
 }
