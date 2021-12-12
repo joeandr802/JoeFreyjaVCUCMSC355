@@ -2,11 +2,9 @@ package com.example.mineweper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class Play extends AppCompatActivity {
 
@@ -85,74 +83,6 @@ public class Play extends AppCompatActivity {
             R.id.tile77
     };
     //array of tile ids in activity_play.xml
-
-    static int[] TEXT_IDS = {
-            R.id.text00,
-            R.id.text01,
-            R.id.text02,
-            R.id.text03,
-            R.id.text04,
-            R.id.text05,
-            R.id.text06,
-            R.id.text07,
-            R.id.text10,
-            R.id.text11,
-            R.id.text12,
-            R.id.text13,
-            R.id.text14,
-            R.id.text15,
-            R.id.text16,
-            R.id.text17,
-            R.id.text20,
-            R.id.text21,
-            R.id.text22,
-            R.id.text23,
-            R.id.text24,
-            R.id.text25,
-            R.id.text26,
-            R.id.text27,
-            R.id.text30,
-            R.id.text31,
-            R.id.text32,
-            R.id.text33,
-            R.id.text34,
-            R.id.text35,
-            R.id.text36,
-            R.id.text37,
-            R.id.text40,
-            R.id.text41,
-            R.id.text42,
-            R.id.text43,
-            R.id.text44,
-            R.id.text45,
-            R.id.text46,
-            R.id.text47,
-            R.id.text50,
-            R.id.text51,
-            R.id.text52,
-            R.id.text53,
-            R.id.text54,
-            R.id.text55,
-            R.id.text56,
-            R.id.text57,
-            R.id.text60,
-            R.id.text61,
-            R.id.text62,
-            R.id.text63,
-            R.id.text64,
-            R.id.text65,
-            R.id.text66,
-            R.id.text67,
-            R.id.text70,
-            R.id.text71,
-            R.id.text72,
-            R.id.text73,
-            R.id.text74,
-            R.id.text75,
-            R.id.text76,
-            R.id.text77
-    };
-    //array of text ids in activity_play.xml
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -365,50 +295,47 @@ public class Play extends AppCompatActivity {
         for(int i = 0; i<sides; i++){
             for(int j = 0; j<sides; j++){
 
-                int buttonId, textId;
-                TextView tileFlag;
+                int buttonId;
 
                 buttonId = BUTTON_IDS[(i*10)+j];
-                textId = TEXT_IDS[(i*10)+j];
                 tileBoard[i][j] = new Tile(i, j, buttonId);
 
                 button = findViewById(buttonId);
-                tileFlag = findViewById(textId);
 
                 button.setOnClickListener(v -> {
-                    if (isFlagging) {
-                        findTileById(tileBoard, button.getId()).toggleFlagged();
-                        if (findTileById(tileBoard, button.getId()).getFlagged()) {
-                            tileFlag.setText('F');
-                            button.setVisibility(View.INVISIBLE);
-                        }
-                        else {
-                            button.setVisibility(View.VISIBLE);
-                        }
-                    }
-                    //handles flagging a space
+                    if (findTileById(tileBoard, button.getId()).getCovered()) {
 
-                    else {
-                        if (howManyMoves == (sides * sides) - mineNumber){
-                            if(mineIsHere(findTileById(tileBoard, button.getId()).getX(),
-                                    findTileById(tileBoard, button.getId()).getY(), tileBoard)){
-                                resetMine(findTileById(tileBoard, button.getId()).getX(),
-                                        findTileById(tileBoard, button.getId()).getY(), tileBoard);
+                        if (isFlagging) {
+                            findTileById(tileBoard, button.getId()).toggleFlagged();
+                            if (findTileById(tileBoard, button.getId()).getFlagged()) {
+                                button.setText('F');
+                            } else {
+                                button.setText(' ');
                             }
                         }
-                        //if this is the first turn and a mine is hit, reroll the mine
+                        //handles flagging a space
 
-                        displayNum(tileBoard,
-                                findTileById(tileBoard, button.getId()).getX(),
-                                findTileById(tileBoard, button.getId()).getY());
-                        //checks for empty tiles and whether the game should end
+                        else {
+                            if (howManyMoves == (sides * sides) - mineNumber) {
+                                if (mineIsHere(findTileById(tileBoard, button.getId()).getX(),
+                                        findTileById(tileBoard, button.getId()).getY(), tileBoard)) {
+                                    resetMine(findTileById(tileBoard, button.getId()).getX(),
+                                            findTileById(tileBoard, button.getId()).getY(), tileBoard);
+                                }
+                            }
+                            //if this is the first turn and a mine is hit, reroll the mine
 
-                        findTileById(tileBoard, button.getId()).uncover();
-                        tileFlag.setText(
-                                (char)findTileById(tileBoard, button.getId()).getSurround());
-                        button.setVisibility(View.GONE);
+                            displayNum(tileBoard,
+                                    findTileById(tileBoard, button.getId()).getX(),
+                                    findTileById(tileBoard, button.getId()).getY());
+                            //checks for empty tiles and whether the game should end
+
+                            findTileById(tileBoard, button.getId()).uncover();
+                            button.setText(
+                                    (char) findTileById(tileBoard, button.getId()).getSurround());
+                        }
+                        //handles uncovering a space
                     }
-                    //handles uncovering a space
                 });
 
                 buttonBoard[i][j] = button;
