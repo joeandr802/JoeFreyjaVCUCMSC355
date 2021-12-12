@@ -310,7 +310,7 @@ public class Play extends AppCompatActivity {
                             if (findTileById(tileBoard, button.getId()).getFlagged()) {
                                 button.setText('F');
                             } else {
-                                button.setText(' ');
+                                button.setText('-');
                             }
                         }
                         //handles flagging a space
