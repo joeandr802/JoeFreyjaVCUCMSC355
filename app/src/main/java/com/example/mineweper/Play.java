@@ -168,79 +168,98 @@ public class Play extends AppCompatActivity {
     }
     //counts how many mines are next to the value chosen
 
-    public void zeroTiler(Tile[][]testBoard, int xCoord, int yCoord){
-        int buttonId;
+    public void zeroTiler(Tile[][]testBoard, int xCoord, int yCoord, int buttonId){
+        //int buttonId;
         Button tempButton;
 
         if(validPlay(xCoord-1,yCoord-1) &&
                 testBoard[xCoord-1][yCoord-1].getSurround()!=0){
-            buttonId = BUTTON_IDS[((xCoord-1)*8)+yCoord-1];
+            buttonId = BUTTON_IDS[((xCoord-1)*8)+(yCoord-1)];
+           displayNum(testBoard,xCoord-1,yCoord-1, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord-1,yCoord-1);
         }
         if(validPlay(xCoord,yCoord-1) &&
                 testBoard[xCoord][yCoord-1].getSurround()!=0){
-            buttonId = BUTTON_IDS[(xCoord*8)+yCoord-1];
+            buttonId = BUTTON_IDS[(xCoord*8)+(yCoord-1)];
+            displayNum(testBoard,xCoord,yCoord-1, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord,yCoord-1);
+
         }
         if(validPlay(xCoord+1,yCoord-1) &&
                 testBoard[xCoord+1][yCoord-1].getSurround()!=0){
-            buttonId = BUTTON_IDS[((xCoord+1)*8)+yCoord-1];
+            buttonId = BUTTON_IDS[((xCoord+1)*8)+(yCoord-1)];
+            displayNum(testBoard,xCoord+1,yCoord-1, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord+1,yCoord-1);
+
         }
         if(validPlay(xCoord-1,yCoord) &&
                 testBoard[xCoord-1][yCoord].getSurround()!=0){
             buttonId = BUTTON_IDS[((xCoord-1)*8)+yCoord];
+            displayNum(testBoard,xCoord-1,yCoord, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord-1,yCoord);
+
         }
         if(validPlay(xCoord+1,yCoord) &&
                 testBoard[xCoord+1][yCoord].getSurround()!=0){
             buttonId = BUTTON_IDS[((xCoord+1)*8)+yCoord];
+            displayNum(testBoard,xCoord+1,yCoord, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord+1,yCoord);
+
         }
         if(validPlay(xCoord-1,yCoord+1) &&
                 testBoard[xCoord-1][yCoord+1].getSurround()!=0){
-            buttonId = BUTTON_IDS[((xCoord-1)*8)+yCoord+1];
+            buttonId = BUTTON_IDS[((xCoord-1)*8)+(yCoord+1)];
+            displayNum(testBoard,xCoord-1,yCoord+1, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord-1,yCoord+1);
+
         }
         if(validPlay(xCoord,yCoord+1 )&&
                 testBoard[xCoord][yCoord+1].getSurround()!=0){
-            buttonId = BUTTON_IDS[(xCoord*8)+yCoord+1];
+            buttonId = BUTTON_IDS[(xCoord*8)+(yCoord+1)];
+            displayNum(testBoard,xCoord,yCoord+1, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord,yCoord+1);
+
         }
         if(validPlay(xCoord+1,yCoord+1) &&
                 testBoard[xCoord+1][yCoord+1].getSurround()!=0){
-            buttonId = BUTTON_IDS[((xCoord+1)*8)+yCoord+1];
+            buttonId = BUTTON_IDS[((xCoord+1)*8)+(yCoord+1)];
+            displayNum(testBoard,xCoord+1,yCoord+1, buttonId);
             tempButton = findViewById(buttonId);
             tempButton.performClick();
-            displayNum(testBoard,xCoord+1,yCoord+1);
+
         }
         //if spaces exist next to a space that equals 0, display those tiles as well
     }
     //displays all spaces around a zero tile if it is chosen
 
-    public void displayNum(Tile[][] tileBoard, int xCoord, int yCoord){
+    public void displayNum(Tile[][] tileBoard, int xCoord, int yCoord, int buttonId){
         int counter;
         counter = countNearbyMines(tileBoard, xCoord, yCoord);
         tileBoard[xCoord][yCoord].setSurround(counter);
 
+        Button tempButton = findViewById(buttonId);
+
+        findTileById(tileBoard, buttonId).uncover();
+
+        tempButton.setText(String.valueOf(findTileById(tileBoard, buttonId).getSurround()));
+        
+        /*int buttonId;
+        Button tempButton;
+        buttonId = BUTTON_IDS[((xCoord)*8)+(yCoord)];
+        tempButton = findViewById(buttonId);
+        tempButton.performClick();*/
+
         howManyMoves--;
 
         if(counter == 0){
-            zeroTiler(tileBoard,xCoord,yCoord);
+            zeroTiler(tileBoard,xCoord,yCoord,buttonId);
         }
         //if a space is chosen that equals 0, show all neighboring tiles
 
@@ -355,13 +374,13 @@ public class Play extends AppCompatActivity {
                             }
                             //if this is the first turn and a mine is hit, reroll the mine
 
-                            displayNum(tileBoard, findXById(buttonId), findYById(buttonId));
+                            displayNum(tileBoard, findXById(buttonId), findYById(buttonId), buttonId);
                             //checks for empty tiles and whether the game should end
 
-                            findTileById(tileBoard, buttonId).uncover();
+                            //findTileById(tileBoard, buttonId).uncover();
 
-                            tempButton.setText(String.valueOf(findTileById(tileBoard,
-                                    buttonId).getSurround()));
+                           // tempButton.setText(String.valueOf(findTileById(tileBoard,
+                                   // buttonId).getSurround()));
                         }
                         //handles uncovering a space
                     }
