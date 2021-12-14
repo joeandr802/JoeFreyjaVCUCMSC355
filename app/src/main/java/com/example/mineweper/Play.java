@@ -274,7 +274,10 @@ public class Play extends AppCompatActivity {
         //if the user didn't choose a slot that wasn't already chosen
 
         if (mineIsHere(xCoord, yCoord, tileBoard)){
-            setContentView(R.layout.activity_lose);
+            //setContentView(R.layout.activity_lose);
+            Intent intent = new Intent(Play.this, lose.class);
+            startActivity(intent);
+           // finishAndRemoveTask();
             return;
         }
         //if the player chose a bomb
