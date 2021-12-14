@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
-import android.media.MediaPlayer;
+
 
 
 public class MainActivity extends AppCompatActivity {
-    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Sound effect
-                player = MediaPlayer.create(MainActivity.this, R.raw.scramble);
-                player.start();
                 //Moving screens
                 Intent intent = new Intent(MainActivity.this, Menu0.class);
                 startActivity(intent);

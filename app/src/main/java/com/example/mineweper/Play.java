@@ -274,7 +274,7 @@ public class Play extends AppCompatActivity {
         //if the user didn't choose a slot that wasn't already chosen
 
         if (mineIsHere(xCoord, yCoord, tileBoard)){
-            //setContentView(R.layout.activity_lose);
+
             Intent intent = new Intent(Play.this, lose.class);
             startActivity(intent);
            // finishAndRemoveTask();
@@ -283,7 +283,10 @@ public class Play extends AppCompatActivity {
         //if the player chose a bomb
 
         if (howManyMoves < 1) {
-            setContentView(R.layout.activity_win);
+           // setContentView(R.layout.activity_win);
+            Intent intent = new Intent(Play.this, win.class);
+            startActivity(intent);
+
         }
         //if the player has uncovered all non-bomb spaces
 
